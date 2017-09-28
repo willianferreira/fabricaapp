@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<!-- Basic -->
+		<meta charset="utf-8">
+		<title>Fabrica da Alegria</title>
+
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Web Fonts  -->
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+
+		<!-- Libs CSS -->
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/fonts/font-awesome/css/font-awesome.css">
+
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="css/theme.css">
+		<link rel="stylesheet" href="css/theme-elements.css">
+
+		<!-- Current Page Styles -->
+		<link rel="stylesheet" href="css/theme-shop.css">
+
+		<!-- Skin CSS -->
+		<link rel="stylesheet" href="css/skins/blue.css">
+
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="css/custom.css">
+
+		<!-- Responsive CSS -->
+		<link rel="stylesheet" href="css/theme-responsive.css" />
+		<script src="js/jquery-1.11.2.js"></script>
+		<script src="js/geturi.js"></script>
+		<script type="text/javascript">
+	    $(document).ready(function() {
+	        var id = decodeURI(getUrlVars()["id"]);
+
+	        $(".push-top").append(
+        	"<input type='hidden' id='idsorteio' value=" + id + " aria-required='true' name='id' />");
+	        
+	    });
+	    </script>
+
+	</head>
+	<body>
+
+		<div class="body">
+<header>
+				<div class="container">
+					<h1 class="logo">
+						<a href="index.html">
+							<img alt="Fabrica da Alegria" width="280" height="80" src="img/logo.png">
+						</a>
+					</h1>
+					<button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse">
+						<i class="icon icon-bars"></i>
+					</button>
+				</div>
+
+				<div class="navbar-collapse nav-main-collapse collapse">
+					<div class="container">
+						<nav class="nav-main mega-menu">
+							<ul class="nav nav-pills nav-main" id="mainMenu">
+								<li>
+									<a href="index.html">Home</a>
+								</li>
+								<li>
+									<a href="empresa.html">Empresa</a>
+								</li>
+								<li>
+									<a href="promocoes.html">Promoções</a>
+								</li>
+								<li>
+									<a href="televendas.html">Televendas</a>
+								</li>
+								<li>
+									<a href="#" onclick="window.open('http://www.fabricadaalegria.com', '_self');">loja virtual</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+
+			</header>
+
+			<div role="main" class="main shop">
+			
+				<div style="font-size:16px;" class="container">
+					<div class="col-md-6">
+
+						<h4 class="push-top">Preencha os dados e <strong>Inscreva-se!</strong></h4>
+						
+							<!-- FORMULARIO -->
+
+							<div class="row">
+                                    <div class="form-group col-sm-7">
+                                        <label for="name">Nome</label>
+                                        <input type="text" id="nome" aria-required="true" name="nome" class="form-control required name" placeholder="Digite seu nome">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                     <div class="form-group col-sm-7">
+                                        <label for="subject">Fone</label>
+                                        <input type="text" id="fone" name="fone" class="form-control required" placeholder="Digite seu telefone" aria-required="true">
+                                    </div>
+                                </div>
+
+                                <input type='hidden' id='celularid' value="device.uuid" aria-required='true' name='celularid' />
+                                
+                                <input type="button" id="enviar" class="btn btn-primary" value="Enviar" />
+
+							<!-- FORMULARIO -->
+
+					</div>
+				</div>
+
+				<footer>
+				<div class="container">
+					<div class="row">
+						<div class="footer-ribon">
+							<span style="font-size:20px; font-family:arial;"><i class="icon icon-phone"></i> <a href="#" onclick="window.open('tel:043999386937', '_self');">(43) 9.9938-6937</a></span>
+						</div>
+						<div class="col-md-12">
+							<div class="newsletter">
+								<h4><strong>Quer Promoção?</strong></h4>
+								<p style="font-size:16px; color:#fff; font-weight:normal;">Qual produto você está procurando hoje?</p>
+
+								<form id="newsletterForm" action="php/newsletter-subscribe.php" method="POST">
+									<div class="input-group">
+										<select class="form-control">
+											<option>Celular</option>
+											<option>Brinquedos</option>
+											<option>Receptor de TV</option>
+											<option>Drone</option>
+											<option>Eletronicos</option>
+										</select>
+									</div>
+								</form>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				<div class="footer-copyright">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-7">
+								<p>APP Desenvolvido por:</p>
+								<a href="#" onclick="window.open('http://www.creativenegocios.com', '_self');"><img title="Creative Negocios" src="img/creative.png"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+
+			</div>
+
+			<div style="position:fixed; bottom:10px; right:10px;"><a href="#" onclick="window.open('tel:043999386937', '_self');"><img src="img/logo-whats.png"></a></div>
+
+		<!-- Libs -->
+		<script src="vendor/jquery.js"></script>
+		<script src="js/plugins.js"></script>
+		
+		<script src="vendor/bootstrap.js"></script>
+
+		<!-- Theme Initializer -->
+		<script src="js/theme.js"></script>
+
+		<!-- Custom JS -->
+		<script src="js/custom.js"></script>
+
+		<script type="text/javascript">
+			function playBeep() {
+		        navigator.notification.vibrate(2000);
+		        navigator.notification.beep(1);
+		    }
+		    function alerta() {
+			    navigator.notification.alert(
+			        'Parabéns, você foi inscrito com sucesso!',
+			        function(){},
+			        'Sorteio!',
+			        'Fechar'
+			    );
+			}
+		</script>
+
+		<!-- Custom JS -->
+		<script src="js/custom.js"></script>
+		<script type="text/javascript" src="cordova.js"></script>
+		<script src="js/index.js"></script>
+
+		<script type="text/javascript">
+	    $(document).ready(function() {
+	        $("#enviar").click(function() {
+	            var nome = $("#nome").val();
+	            var fone = $("#fone").val();
+	            var id = $("#idsorteio").val();
+	            var celularid = device.uuid;
+
+	            var dataString = "nome=" + nome + "&fone=" + fone + "&id=" + id + "&celularid=" + celularid +"&enviar=";
+	            if ($.trim(nome).length > 0 & $.trim(fone).length > 0 & $.trim(id).length > 0 & $.trim(celularid).length > 0) {
+	                $.ajax({
+	                    type: "POST",
+	                    url: "http://creativenegocios.com/fabrica/db/insert.php",
+	                    data: dataString,
+	                    crossDomain: true,
+	                    cache: false,
+	                    beforeSend: function() {
+	                        $("#enviar").val('Enviando...');
+	                    },
+	                    success: function(data) {
+	                        if (data == "success") {
+	                        	playBeep();
+	                            alerta();
+	                            $("#enviar").val('submit');
+	                            location.href="index.html";
+	                        } else if (data == "error") {
+	                            alert("error");
+	                        }
+	                    }
+	                });
+	            }
+	            return false;
+	        });
+	    });
+    </script>
+
+	</body>
+</html>

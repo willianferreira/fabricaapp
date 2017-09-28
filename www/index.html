@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<!-- Basic -->
+		<meta charset="utf-8">
+		<title>Fabrica da Alegria</title>
+
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Web Fonts  -->
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+
+		<!-- Libs CSS -->
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/fonts/font-awesome/css/font-awesome.css">
+
+
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="css/theme.css">
+		<link rel="stylesheet" href="css/theme-elements.css">
+		<link rel="stylesheet" href="vendor/rs-plugin/css/settings.css" media="screen">
+		<link rel="stylesheet" href="vendor/circle-flip-slideshow/css/component.css" media="screen">
+
+		<!-- Current Page Styles -->
+		<link rel="stylesheet" href="css/theme-shop.css">
+
+		<!-- Skin CSS -->
+		<link rel="stylesheet" href="css/skins/blue.css">
+
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="css/custom.css">
+
+		<!-- Responsive CSS -->
+		<link rel="stylesheet" href="css/theme-responsive.css" />
+		<script src="js/jquery-1.11.2.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function() {
+		    var url = "http://creativenegocios.com/fabrica/db/sorteios.php";
+		    $.getJSON(url, function(result) {
+		        console.log(result);
+		        $.each(result, function(i, field) {
+		            var id = field.id;
+		            var produto = field.produto;
+		            var img = field.img;
+		            var data = field.data;
+		            var status = field.status;
+		            $("#sorteio").append(
+		            	"<h4>PARTICIPE DO SORTEIO!</h4><a class='' href='sorteios.html?id=" 
+		            	+ id + "'><div style='color:#000; font-weight:bold; margin-bottom:10px; font-size:17px; text-transform:uppercase;'>"+produto+"</div>" +" <button class='btn btn-md btn-danger'>Quero me Inscrever</button>");
+		            $('#preloader').fadeOut(1500);
+		            
+		        });
+		    });
+		});
+		</script>
+
+
+	</head>
+	<body>
+
+		<div class="body">
+			<header>
+				<div class="container">
+					<h1 class="logo">
+						<a href="index.html">
+							<img alt="Fabrica da Alegria" width="280" height="80" src="img/logo.png">
+						</a>
+					</h1>
+					<button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse">
+						<i class="icon icon-bars"></i>
+					</button>
+				</div>
+
+				<div class="navbar-collapse nav-main-collapse collapse">
+					<div class="container">
+						<nav class="nav-main mega-menu">
+							<ul class="nav nav-pills nav-main" id="mainMenu">
+								<li>
+									<a href="index.html">Home</a>
+								</li>
+								<li>
+									<a href="empresa.html">Empresa</a>
+								</li>
+								<li>
+									<a href="sorteios.html">Sorteio</a>
+								</li>
+								<li>
+									<a href="televendas.html">Televendas</a>
+								</li>
+								<li>
+									<a href="#" onclick="window.open('http://www.fabricadaalegria.com', '_self');">loja virtual</a>
+								</li>
+								
+							</ul>
+						</nav>
+					</div>
+				</div>
+
+			</header>
+
+			<div class="container">
+				
+				<div style="text-align:center; margin-top:10px; margin-bottom:10px;" id="sorteio">
+				
+				</div>
+
+			</div>
+
+				<iframe src="http://www.creativenegocios.com/fabrica/produtos.php" style="position:absolute; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden;">
+	        	</iframe>
+
+			<div style="position:fixed; bottom:10px; right:10px;"><a href="#" onclick="window.open('tel:043999386937', '_self');"><img src="img/logo-whats.png"></a></div>
+			
+
+		<!-- Libs -->
+		<script src="vendor/jquery.js"></script>
+		<script src="js/plugins.js"></script>
+		<script src="vendor/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+		<script src="vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+		<!-- Current Page Scripts -->
+		<script src="js/views/view.home.js"></script>
+		
+		<script src="vendor/bootstrap.js"></script>
+
+		<!-- Theme Initializer -->
+		<script src="js/theme.js"></script>
+
+		<!-- Custom JS -->
+		<script src="js/custom.js"></script>
+		<script type="text/javascript" src="cordova.js"></script>
+
+		<script type="text/javascript">
+			function playBeep() {
+		        navigator.notification.vibrate(4000);
+		        navigator.notification.beep(1);
+		    }
+		</script>
+
+	</body>
+</html>
