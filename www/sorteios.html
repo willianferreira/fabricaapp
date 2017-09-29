@@ -211,8 +211,8 @@
 	                    },
 	                    success: function(data) {
 	                        if (data == "success") {
-	                        	playBeep();
-	                            alerta();
+	                        	//playBeep();
+	                            //alerta();
 	                            $("#enviar").val('submit');
 	                            location.href="index.html";
 	                        } else if (data == "error") {
@@ -223,6 +223,12 @@
 	            }
 	            return false;
 	        });
+	    });
+
+	    $('#enviar').click(function(){
+	    	playBeep();
+            alerta();
+            location.href="index.html";
 	    });
 
 	    
