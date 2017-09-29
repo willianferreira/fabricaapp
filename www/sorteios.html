@@ -32,16 +32,6 @@
 		<!-- Responsive CSS -->
 		<link rel="stylesheet" href="css/theme-responsive.css" />
 		<script src="js/jquery-1.11.2.js"></script>
-		<script src="js/geturi.js"></script>
-		<script type="text/javascript">
-	    $(document).ready(function() {
-	        var id = decodeURI(getUrlVars()["id"]);
-
-	        $(".push-top").append(
-        	"<input type='hidden' id='idsorteio' value=" + id + " aria-required='true' name='id' />");
-	        
-	    });
-	    </script>
 
 	</head>
 	<body>
@@ -196,10 +186,9 @@
 	        $("#enviar").click(function() {
 	            var nome = $("#nome").val();
 	            var fone = $("#fone").val();
-	            var id = $("#idsorteio").val();
  
-	            var dataString = "nome=" + nome + "&fone=" + fone + "&id=" + id + "&enviar=";
-	            if ($.trim(nome).length > 0 & $.trim(fone).length > 0 & $.trim(id).length > 0) {
+	            var dataString = "nome=" + nome + "&fone=" + fone + "&enviar=";
+	            if ($.trim(nome).length > 0 & $.trim(fone).length > 0) {
 	                $.ajax({
 	                    type: "POST",
 	                    url: "http://creativenegocios.com/fabrica/db/insert.php",
@@ -211,8 +200,8 @@
 	                    },
 	                    success: function(data) {
 	                        if (data == "success") {
-	                        	//playBeep();
-	                            //alerta();
+	                        	playBeep();
+	                            alerta();
 	                            $("#enviar").val('submit');
 	                            location.href="index.html";
 	                        } else if (data == "error") {
@@ -223,12 +212,6 @@
 	            }
 	            return false;
 	        });
-	    });
-
-	    $('#enviar').click(function(){
-	    	playBeep();
-            alerta();
-            location.href="index.html";
 	    });
 
 	    
