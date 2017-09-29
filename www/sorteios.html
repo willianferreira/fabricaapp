@@ -85,6 +85,8 @@
 
 			</header>
 
+			<div id="info"></div>
+
 			<div role="main" class="main shop">
 			
 				<div style="font-size:16px;" class="container">
@@ -107,7 +109,6 @@
                                     </div>
                                 </div>
 
-                                <input type='hidden' id='celularid' value="device.uuid" aria-required='true' name='celularid' />
                                 
                                 <input type="button" id="enviar" class="btn btn-primary" value="Enviar" />
 
@@ -197,9 +198,9 @@
 	            var nome = $("#nome").val();
 	            var fone = $("#fone").val();
 	            var id = $("#idsorteio").val();
-	            var celularid = device.uuid;
-
-	            var dataString = "nome=" + nome + "&fone=" + fone + "&id=" + id + "&celularid=" + celularid +"&enviar=";
+	            var celularid = $("#celularid").val();
+ 
+	            var dataString = "nome=" + nome + "&fone=" + fone + "&id=" + id + "&celularid=" + celularid + "&enviar=";
 	            if ($.trim(nome).length > 0 & $.trim(fone).length > 0 & $.trim(id).length > 0 & $.trim(celularid).length > 0) {
 	                $.ajax({
 	                    type: "POST",
@@ -225,6 +226,8 @@
 	            return false;
 	        });
 	    });
+
+	    
     </script>
 
 	</body>
