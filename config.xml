@@ -27,7 +27,7 @@
     <feature name="Notification">
         <param name="android-package" value="org.apache.cordova.Notification" />
      </feature>
-     <gap:plugin name="org.apache.cordova.core.vibration"  />
-    <gap:plugin name="org.apache.cordova.device" />
-    <plugin name="org.apache.cordova.vibration" spec="0.3.11" source="pgb" />
+<gap:plugin name="org.apache.cordova.core.device" />
+<gap:plugin name="org.apache.cordova.core.dialogs" />
+<gap:plugin name="org.apache.cordova.core.vibration" />
 </widget>
