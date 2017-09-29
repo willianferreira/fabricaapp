@@ -29,6 +29,6 @@
      </feature>
      <gap:plugin name="org.apache.cordova.core.vibration" />
     <gap:plugin name="org.apache.cordova.device" />
-    <gap:plugin  name="org.apache.cordova.dialogs" source="npm" ></gap:plugin>
+    <plugin spec=“https://github.com/apache/cordova-plugin-dialogs” source=“git” />
     <gap:plugin name="org.apache.cordova.vibration" />
 </widget>
