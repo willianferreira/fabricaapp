@@ -163,6 +163,7 @@
 
 		<script type="text/javascript">
 			function playBeep() {
+		        navigator.notification.vibrate(2000);
 		        navigator.notification.beep(1);
 		    }
 		    function alerta() {
@@ -200,7 +201,7 @@
 	                    success: function(data) {
 	                        if (data == "success") {
 	                        	playBeep();
-	                            alert('Parabéns, você foi inscrito com sucesso!')
+	                            alerta();
 	                            $("#enviar").val('submit');
 	                            location.href="index.html";
 	                        } else if (data == "error") {
