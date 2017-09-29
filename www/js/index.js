@@ -47,14 +47,4 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
-
-document.addEventListener("deviceready", exibirInfo, false);
-
-function exibirInfo() {
-
-    var info = document.getElementById('info');
-
-    info.innerHTML = "<input type='hidden' id='celularid' value='"+device.uuid+"' aria-required='true' name='celularid' />";
-}
-
 app.initialize();
