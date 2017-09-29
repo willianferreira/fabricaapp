@@ -54,7 +54,7 @@ function exibirInfo() {
 
     var info = document.getElementById('info');
 
-    idcelular = device.uuid;
+    info.innerHTML = "<input type='hidden' id='celularid' value='"+device.uuid+"' aria-required='true' name='celularid' />";
 }
 
 app.initialize();
