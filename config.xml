@@ -9,7 +9,7 @@
     </author>
     <content src="index.html" />
     <icon src="icon.png" />
-    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <gap:plugin name="cordova-plugin-whitelist" source="npm" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -29,6 +29,5 @@
      </feature>
      <gap:plugin name="org.apache.cordova.core.vibration" />
     <gap:plugin name="org.apache.cordova.device" />
-    <gap:plugin spec=“https://github.com/apache/cordova-plugin-dialogs” source=“git” />
     <gap:plugin name="org.apache.cordova.vibration" />
 </widget>
