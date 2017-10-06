@@ -136,14 +136,15 @@
 								<h4><strong>Quer Promoção?</strong></h4>
 								<p style="font-size:16px; color:#fff; font-weight:normal;">Qual produto você está procurando hoje?</p>
 
-								<form id="newsletterForm" action="php/newsletter-subscribe.php" method="POST">
+								<form id="promotions" method="POST">
 									<div class="input-group">
-										<select class="form-control">
-											<option>Celular</option>
-											<option>Brinquedos</option>
-											<option>Receptor de TV</option>
-											<option>Drone</option>
-											<option>Eletronicos</option>
+										<select onChange=selectChange(this.value) class="form-control">
+											<option>Selecione</option>
+											<option value="Celular">Celular</option>
+											<option value="Brinquedos">Brinquedos</option>
+											<option value="Receptor">Receptor de TV</option>
+											<option value="Drone">Drone</option>
+											<option value="Eletronicos">Eletronicos</option>
 										</select>
 									</div>
 								</form>
@@ -178,6 +179,26 @@
 		        navigator.notification.vibrate(4000);
 		        navigator.notification.beep(1);
 		    }
+
+		    function linkproduto(link){
+		    	window.open(link, '_self');
+		    }
+
+			function selectChange(val) {
+			    if(val == 'Celular') {
+			    	window.open('https://goo.gl/JbgZ7D', '_self');
+			    }else if(val == 'Brinquedos') {
+			    	window.open('https://goo.gl/pVFYY5', '_self');
+			    }else if(val == 'Receptor') {
+			    	window.open('https://goo.gl/CHJhTF', '_self');
+			    }else if(val == 'Drone') {
+			    	window.open('https://goo.gl/Sd6TPt', '_self');
+			    }else if(val == 'Eletronicos') {
+			    	window.open('https://goo.gl/djmhAr', '_self');
+			    }
+			    playBeep();
+			}
+
 		</script>
 
 		<!-- Theme Initializer -->
